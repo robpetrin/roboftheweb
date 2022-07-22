@@ -1,0 +1,331 @@
+@charset "UTF-8";
+/* ---------------------------------------------------------------------------------------------
+
+	Theme Name: Davis Blocks
+    Text Domain: davis-blocks
+	Version: 0.1.2
+	Description: Davis Blocks is a clean, simple and fast block theme built for Full Site Editing. It can be used out of the box as a lightweight blog theme, or as a foundation for greater things when customized in the Site Editor.
+	Tags: blog, one-column, custom-background, custom-colors, custom-menu, editor-style, featured-images, sticky-post, threaded-comments, translation-ready, block-styles, wide-blocks, full-site-editing
+	Author: Anders Norén
+	Author URI: https://andersnoren.se
+	Theme URI: https://andersnoren.se/teman/davis-blocks-wordpress-theme/
+	License: GNU General Public License version 2.0
+	License URI: https://gnu.org/licenses/gpl-2.0.html
+	Requires PHP: 5.6
+	Tested up to: 6.0
+
+/* --------------------------------------------------------------------------------------------- */
+/*
+ * Link styles. Necessary until the following issue is resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/27075
+ */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.wp-block-navigation .wp-block-navigation-item a:hover,
+.wp-block-navigation .wp-block-navigation-item a:focus {
+  text-decoration: underline;
+  text-decoration-style: solid;
+}
+
+/* Input styles */
+input, textarea, select, button {
+  background-color: inherit;
+  border-radius: 0;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input, textarea, select {
+  background-color: var(--wp--preset--color--background);
+  border: 0.1rem solid var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--foreground);
+  padding: 0.5em;
+}
+
+/* Caption styles */
+:root figcaption {
+  color: inherit;
+  font-size: var(--wp--preset--font-size--small);
+}
+
+/*
+ * Button hover styles. Necessary until the following issue is resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/27075
+ */
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-button__link:hover,
+.wp-block-button__link:visited {
+  color: var(--wp--preset--color--background);
+}
+
+/*
+ * Alignment styles. Relevant issues:
+ * https://github.com/WordPress/gutenberg/issues/35607
+ * https://github.com/WordPress/gutenberg/issues/35884
+ */
+.wp-site-blocks,
+body > .is-root-container,
+.edit-post-visual-editor__post-title-wrapper,
+.wp-block-group.alignfull,
+.wp-block-cover.alignfull,
+.is-root-container .wp-block[data-align=full] > .wp-block-group,
+.is-root-container .wp-block[data-align=full] > .wp-block-cover {
+  padding-left: var(--wp--custom--spacing--outer);
+  padding-right: var(--wp--custom--spacing--outer);
+}
+
+.wp-site-blocks .alignfull,
+.wp-site-blocks > .wp-block-group.has-background,
+.wp-site-blocks > .wp-block-cover,
+.wp-site-blocks > .wp-block-template-part > .wp-block-group.has-background,
+.wp-site-blocks > .wp-block-template-part > .wp-block-cover,
+body > .is-root-container > .wp-block-cover,
+body > .is-root-container > .wp-block-template-part > .wp-block-group.has-background,
+body > .is-root-container > .wp-block-template-part > .wp-block-cover,
+.is-root-container .wp-block[data-align=full] {
+  margin-left: calc(-1 * var(--wp--custom--spacing--outer)) !important;
+  margin-right: calc(-1 * var(--wp--custom--spacing--outer)) !important;
+  width: unset;
+}
+
+.wp-site-blocks .wp-block-columns .wp-block-column .alignfull,
+.is-root-container .wp-block-columns .wp-block-column .wp-block[data-align=full],
+.wp-site-blocks .alignfull:not(.wp-block-group) .alignfull,
+.is-root-container .wp-block[data-align=full] > *:not(.wp-block-group) .wp-block[data-align=full] {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: inherit;
+}
+
+/*
+ * Search and File Block button styles.
+ * Necessary until the following issues are resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/36444
+ * https://github.com/WordPress/gutenberg/issues/27760
+ */
+button,
+input[type=button],
+input[type=submit],
+input[type=reset],
+.wp-block-search__button,
+.wp-block-file .wp-block-file__button {
+  background-color: var(--wp--preset--color--foreground);
+  border: none;
+  border-radius: 0;
+  color: var(--wp--preset--color--background);
+  font-size: var(--wp--preset--font-size--medium);
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+}
+
+/* Editor Post Title */
+.editor-post-title__input {
+  text-align: center;
+}
+
+/* Background Padding */
+h1.has-background, h2.has-background, h3.has-background, h4.has-background, h5.has-background, h6.has-background, :where(.wp-block-group.has-background) {
+  padding: 1.5em;
+}
+
+/* Block: Calendar */
+.wp-block-calendar table caption,
+.wp-block-calendar table tbody {
+  color: var(--wp--preset--color--foreground);
+}
+
+.wp-block-calendar th,
+.wp-block-calendar tbody td {
+  border-color: var(--wp--preset--color--secondary);
+}
+
+.wp-block-calendar table th {
+  background-color: var(--wp--preset--color--secondary);
+}
+
+/* Block: File */
+.wp-block-file {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+:root .wp-block-file__button:not(:only-child) {
+  margin-left: var(--wp--custom--spacing--baseline);
+}
+
+/* Block: Heading */
+.wp-block-post-content h1:not([style*=margin-top]):not(:first-child),
+.wp-block-post-content h2:not([style*=margin-top]):not(:first-child),
+.wp-block-post-content h3:not([style*=margin-top]):not(:first-child),
+.wp-block-post-content h4:not([style*=margin-top]):not(:first-child),
+.wp-block-post-content h5:not([style*=margin-top]):not(:first-child),
+.wp-block-post-content h6:not([style*=margin-top]):not(:first-child) {
+  margin-top: var(--wp--custom--spacing--medium) !important;
+}
+
+/* Block: Navigation */
+.wp-block-navigation__responsive-container.is-menu-open {
+  padding: var(--wp--custom--spacing--outer);
+}
+
+/* Block: Post Comments Form */
+.required-field-message,
+.comment-notes {
+  display: none;
+}
+
+.comment-reply-title,
+.logged-in-as {
+  font-size: inherit;
+  text-align: center;
+}
+
+.comment-form:first-child:not(.logged-in-as),
+.comment-form .comment-notes:first-child + *,
+.comment-form .logged-in-as:first-child + * {
+  margin-top: 30px;
+}
+
+/* Block: Search Form */
+.wp-block-search__input,
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+  border-color: var(--wp--preset--color--secondary) !important;
+}
+
+.wp-block-search__input {
+  margin: 0;
+  padding: 0.75em;
+}
+
+.wp-block-search__button-inside .wp-block-search__inside-wrapper,
+.wp-block-search__button-inside .wp-block-search__input {
+  margin: 0;
+  padding: 0.375em 0.5em !important;
+}
+
+.wp-block-search__button {
+  margin: 0 0 0 0.75em;
+}
+
+/* Block: Separator */
+hr.is-style-davis-separator {
+  border-width: 1px;
+  height: 1px !important;
+  position: relative;
+}
+
+hr.is-style-davis-separator:before,
+hr.is-style-davis-separator:after {
+  background-color: var(--wp--preset--color--background);
+  border: 1px solid;
+  box-sizing: border-box;
+  content: "";
+  height: 12px;
+  position: absolute;
+  top: calc(50% - 6px);
+  transform: rotate(45deg);
+  width: 12px;
+}
+
+hr.is-style-davis-separator:before {
+  left: calc(50% - 14px);
+}
+
+hr.is-style-davis-separator:after {
+  left: calc(50% + 2px);
+}
+
+/* Block: Table */
+:root .wp-block-table *,
+.wp-block-table.is-style-stripes {
+  border-color: var(--wp--preset--color--secondary);
+}
+
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+  background-color: var(--wp--preset--color--secondary);
+}
+
+form {
+  width: fit-content;
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+form .intro-text {
+  font-size: 1.5rem !important;
+  font-weight: 800;
+  text-align: center;
+  font-size: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+}
+form .field-your-name, form .field-your-email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  max-width: 90vw;
+}
+form .field-your-name label, form .field-your-email label {
+  width: 150px;
+  text-align: right;
+}
+form .field-your-name input, form .field-your-email input {
+  height: 2rem;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid;
+  color: white;
+  font-size: 1rem;
+}
+form .field-your-name input::placeholder, form .field-your-email input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+form .confirm-text {
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+  width: 80%;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+form button {
+  display: block;
+  width: 45vw;
+  max-width: 300px;
+  margin: 0 auto;
+  border: 1px solid;
+  background: transparent;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  width: 50vw;
+  padding: 0.5rem 0;
+}
+form button:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: #1c304c;
+  cursor: pointer;
+}
+
+.wp-block-buttons {
+  transition: opacity 0.3s;
+}
+.wp-block-buttons:hover {
+  opacity: 0.8;
+}
+
+/*# sourceMappingURL=style.css.map */
