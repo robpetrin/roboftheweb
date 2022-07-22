@@ -321,6 +321,11 @@ form button:hover {
   cursor: pointer;
 }
 
+@media (max-width: 599px) {
+  .blog-row {
+    flex-direction: column !important;
+  }
+}
 .wp-block-buttons {
   transition: opacity 0.3s;
 }
