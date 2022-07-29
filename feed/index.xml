@@ -12,7 +12,7 @@
 	<atom:link href="/feed/" rel="self" type="application/rss+xml" />
 	<link>/</link>
 	<description></description>
-	<lastBuildDate>Fri, 08 Jul 2022 18:50:44 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 29 Jul 2022 21:03:33 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -32,12 +32,14 @@
 		<link>/front-end-web-development-tools/</link>
 					<comments>/front-end-web-development-tools/#respond</comments>
 		
-		<dc:creator><![CDATA[admin]]></dc:creator>
+		<dc:creator><![CDATA[Rob Petrin]]></dc:creator>
 		<pubDate>Thu, 07 Jul 2022 20:39:50 +0000</pubDate>
 				<category><![CDATA[Blog Posts]]></category>
 		<guid isPermaLink="false">/?p=119</guid>
 
-					<description><![CDATA[For new and experienced web developers, assessing tools and resources is a critical part of your practice. This includes web references, web tools, code editors, CMS software, and more. In this article, we&#8217;re going to assess seven distinct tools, and why you should select them over their chief competitors. None of the applications below are [&#8230;]]]></description>
+					<description><![CDATA[<p>For new and experienced web developers, assessing tools and resources is a critical part of your practice. This includes web references, web tools, code editors, CMS software, and more. In this article, we&#8217;re going to assess seven distinct tools, and why you should select them over their chief competitors. None of the applications below are [&#8230;]</p>
+<p>The post <a rel="nofollow" href="/front-end-web-development-tools/">The Best Front-End Web Development Tools</a> appeared first on <a rel="nofollow" href="/">Rob, of the Web</a>.</p>
+]]></description>
 										<content:encoded><![CDATA[
 <p>For new and experienced web developers, assessing tools and resources is a critical part of your practice. This includes web references, web tools, code editors, CMS software, and more. In this article, we&#8217;re going to assess seven distinct tools, and why you should select them over their chief competitors.</p>
 
@@ -200,6 +202,7 @@
 
 
 <p><strong>Chief Competitor: </strong><a rel="noreferrer noopener" href="https://www.mozilla.org/en-US/firefox/new/" data-type="URL" data-id="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>, obviously.</p>
+<p>The post <a rel="nofollow" href="/front-end-web-development-tools/">The Best Front-End Web Development Tools</a> appeared first on <a rel="nofollow" href="/">Rob, of the Web</a>.</p>
 ]]></content:encoded>
 					
 					<wfw:commentRss>/front-end-web-development-tools/feed/</wfw:commentRss>
